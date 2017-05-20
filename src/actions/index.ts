@@ -3,6 +3,7 @@ import { GridPosition } from "../models/GridPosition";
 export interface SquareClickedAction {
   type: any
   postion: GridPosition
+	newlySelected: boolean
 }
 
 export const SQUARE_SELECTED = "SQUARE_SELECTED";
@@ -17,11 +18,13 @@ export const SQUARE_FULL_LINK = "SQUARE_FULL_LINK"
 export const selectSquare = (gridPostion: GridPosition): SquareClickedAction => ({
   type: SQUARE_SELECTED,
   postion: gridPostion,
+	newlySelected: true
 })
 
 export const unselectSquare = (gridPostion: GridPosition): SquareClickedAction => ({
   type: SQUARE_UNSELECTED,
   postion: gridPostion,
+	newlySelected: false
 })
 
 export function squarePairClass(state: string) : string {

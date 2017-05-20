@@ -6,6 +6,7 @@ var request = require('sync-request');
 
 const initialGameState: Stores.GameState = {
       lastSquareActioned: null,
+      newlySelected: false,
       game: {
         "0-0": 0,
         "0-1": 0,
@@ -45,10 +46,12 @@ export function GameStateReducer (state: Stores.GameState = initialGameState, ac
     case SQUARE_SELECTED:
         currentState.game[GetSquareName(action.postion)] = 1;
         currentState.lastSquareActioned = action.postion;
+        currentState.newlySelected = action.newlySelected;
         return currentState
     case SQUARE_UNSELECTED:
         currentState.game[GetSquareName(action.postion)] = 0;
         currentState.lastSquareActioned = action.postion;
+        currentState.newlySelected = action.newlySelected;
         return currentState
   }
   return currentState

@@ -7,6 +7,7 @@ export namespace Stores {
   export type GameState = { 
       game: any
       lastSquareActioned: GridPosition
+      newlySelected: boolean
     }
 
   export type Phrase = {
