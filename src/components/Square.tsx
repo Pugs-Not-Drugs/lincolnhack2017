@@ -18,7 +18,6 @@ export class Square extends React.Component<SquareProps,{}> {
         this.props = props;
         this.stateOfSquare = false;
         store.subscribe(this.handleStateChange.bind(this));
-        console.log("constructor say WHAAAAT!?")
     }
 
     handleStateChange() {
