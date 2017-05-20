@@ -3,7 +3,7 @@ import { selectSquare, unselectSquare, SquareClickedAction, SQUARE_SELECTED, SQU
 import { Stores } from '../stores'
 import { GetSquareName } from "../SquareStateHelper"
 
-const initialState: Stores.GameState = {
+const initialGameState: Stores.GameState = {
       lastSquareActioned: null,
       game: {
         "0-0": 0,
@@ -34,7 +34,7 @@ const initialState: Stores.GameState = {
       }
 }
 
-export function GameStateReducer (state: Stores.GameState = initialState, action: SquareClickedAction): Stores.GameState {
+export function GameStateReducer (state: Stores.GameState = initialGameState, action: SquareClickedAction): Stores.GameState {
   var currentState: Stores.GameState = state
   switch (action.type) {
     case SQUARE_SELECTED:
@@ -49,6 +49,36 @@ export function GameStateReducer (state: Stores.GameState = initialState, action
   return currentState
 }
 
-function getState() {
+const initialPhrases: Stores.Phrases = {
+  phrases: [ 
+    { message: "asdas", weight: 1},
+    { message: "123", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "dsa", weight: 1},
+    { message: "sad", weight: 1},
+    { message: "sad", weight: 1},
+    { message: "asd", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1},
+    { message: "ads", weight: 1}
+  ]
+}
 
+export function PhrasesReducer (state: Stores.Phrases = initialPhrases): Stores.Phrases {
+  return state;
 }

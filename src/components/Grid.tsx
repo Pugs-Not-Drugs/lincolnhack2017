@@ -2,42 +2,15 @@ import * as React from "react";
 
 import { GridPosition } from "../models/GridPosition";
 import { SquareData } from "../models/SquareData";
-
 import { Square } from "./Square";
+import { phrasesStore } from '../stores'
 
 export interface GridProps { }
 
 // supply to API the number of rows/cols
 let numColumns = 5;
 
-// message, weight
-let phrases = [
-	{message: "Strong and Stable", weight: 10},
-	{message: "I like hats", weight: 10},
-	{message: "Reference to Paddy Ashdown eating his hat", weight: 10},
-	{message: "A4", weight: 10},
-	{message: "A5", weight: 10},
-	{message: "B1", weight: 10},
-	{message: "B2", weight: 10},
-	{message: "B3", weight: 10},
-	{message: "B4", weight: 10},
-	{message: "B5", weight: 10},
-	{message: "C1", weight: 10},
-	{message: "C2", weight: 10},
-	{message: "C3", weight: 10},
-	{message: "C4", weight: 10},
-	{message: "C5", weight: 10},
-	{message: "D1", weight: 10},
-	{message: "D2", weight: 10},
-	{message: "D3", weight: 10},
-	{message: "D4", weight: 10},
-	{message: "D5", weight: 10},
-	{message: "E1", weight: 10},
-	{message: "E2", weight: 10},
-	{message: "E3", weight: 10},
-	{message: "E4", weight: 10},
-	{message: "E5", weight: 10},
-]
+let phrases = phrasesStore.getState().phrases
 
 var phraseList: SquareData[][] = [];
 
