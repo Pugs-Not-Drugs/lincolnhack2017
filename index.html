@@ -11,5 +11,18 @@
         <script src="./node_modules/react/dist/react.js"></script>
         <script src="./node_modules/react-dom/dist/react-dom.js"></script>
         <script src="./dist/bundle.js"></script>
+
+        <script type="text/javascript">
+            var classname = document.getElementsByClassName("square");
+
+            var clickFunc = function() {
+                var attribute = this.getAttribute("data-myattribute");
+                this.className += " complete";
+            };
+
+            for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', clickFunc, false);
+            }
+        </script>
     </body>
 </html>

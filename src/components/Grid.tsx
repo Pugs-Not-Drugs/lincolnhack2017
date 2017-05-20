@@ -14,7 +14,7 @@ let numColumns = 5;
 let phrases = [
 	{message: "Strong and Stable", weight: 10},
 	{message: "I like hats", weight: 10},
-	{message: "A3", weight: 10},
+	{message: "Reference to Paddy Ashdown eating his hat", weight: 10},
 	{message: "A4", weight: 10},
 	{message: "A5", weight: 10},
 	{message: "B1", weight: 10},
