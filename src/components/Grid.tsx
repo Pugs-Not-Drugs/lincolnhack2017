@@ -12,8 +12,8 @@ let numColumns = 5;
 
 // message, weight
 let phrases = [
-	{message: "A1", weight: 10},
-	{message: "A2", weight: 10},
+	{message: "Strong and Stable", weight: 10},
+	{message: "I like hats", weight: 10},
 	{message: "A3", weight: 10},
 	{message: "A4", weight: 10},
 	{message: "A5", weight: 10},
