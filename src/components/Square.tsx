@@ -1,12 +1,10 @@
 import * as React from "react";
 import { createStore, Store } from "redux";
 import { GridPosition } from "../models/GridPosition";
-import { Stores } from "../stores";
-import { GameStateReducer } from "../reducers";
+import { gameStateStore } from "../stores";
 import { selectSquare, unselectSquare } from "../actions"
 import { GetSquareName } from "../SquareStateHelper"
 
-const store: Store<Stores.GameState> = createStore(GameStateReducer)
 
 export interface SquareProps { phrase: string; position: GridPosition}
 
@@ -22,15 +20,15 @@ export class Square extends React.Component<SquareProps,{}> {
         this.stateOfSquare = false;
         this.horizontalPair = false;
         this.verticalPair = false;
-        store.subscribe(this.handleStateChange.bind(this));
-        store.subscribe(this.handleConnectorUpdate.bind(this));
+        gameStateStore.subscribe(this.handleStateChange.bind(this));
+        gameStateStore.subscribe(this.handleConnectorUpdate.bind(this));
             this.state = {
       newForm : null
     };
     }
 
     handleStateChange() {
-        if(store.getState().game[GetSquareName(this.props.position)] === 1) {
+        if(gameStateStore.getState().game[GetSquareName(this.props.position)] === 1) {
             this.stateOfSquare = true;
         } else { 
             this.stateOfSquare = false;
@@ -43,14 +41,14 @@ export class Square extends React.Component<SquareProps,{}> {
 
    handleClick() {
       if(this.stateOfSquare === false) {
-        store.dispatch(selectSquare(this.props.position))
+        gameStateStore.dispatch(selectSquare(this.props.position))
       } else {
-        store.dispatch(unselectSquare(this.props.position))
+        gameStateStore.dispatch(unselectSquare(this.props.position))
       }
   }
 
   handleConnectorUpdate() {
-    let x = store.getState();
+    let x = gameStateStore.getState();
   }
   
   render() {
