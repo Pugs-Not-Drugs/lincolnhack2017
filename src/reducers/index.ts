@@ -1,6 +1,7 @@
 import * as Redux from "redux";
 import { selectSquare, unselectSquare, SquareClickedAction, SQUARE_SELECTED, SQUARE_UNSELECTED } from '../actions'
 import { Stores } from '../stores'
+import { GetSquareName } from "../SquareStateHelper"
 
 const initialState: Stores.GameState = {
       game: {
@@ -36,11 +37,10 @@ export function GameStateReducer (state: Stores.GameState = initialState, action
   var currentState: Stores.GameState = state
   switch (action.type) {
     case SQUARE_SELECTED:
-    action.postion.x
-        currentState.game["0-0"] = 1;
+        currentState.game[GetSquareName(action.postion)] = 1;
         return currentState
     case SQUARE_UNSELECTED:
-        currentState.game["0-0"] = 0;
+        currentState.game[GetSquareName(action.postion)] = 0;
         return currentState
   }
   return currentState
