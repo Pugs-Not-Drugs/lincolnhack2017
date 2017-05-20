@@ -72,9 +72,22 @@
 }
 
 #eventTicker {
-	position: absolute;
-	top: 0;
-	font-size: 30px;
-	color: red;
-	background-color: yellow;
+	position:absolute;
+    top:35%;
+    left:35%;
+    right:35%;
+    bottom:35%;
+    background-color:rgba(0, 0, 0, 0.85);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:9999;
+    color:white;
+    text-align: center;
+	font-size: 40px;
+	padding: 5%;
+	white-space: normal;
+	line-height: 40px;
+	float: left;
+}
+#eventTicker:empty {
+   display: none;
 }

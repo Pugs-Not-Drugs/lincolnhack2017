@@ -33,7 +33,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
 
   render() {
         return (
-            <div id="eventTicker">{this.text}</div>
+            <div id="eventTicker"><p>{this.text}</p</div>
         );
   }
 }
