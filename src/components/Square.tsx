@@ -81,7 +81,7 @@ export class Square extends React.Component<SquareProps,{}> {
 		id={"square-" + this.props.position.x + "-" + this.props.position.y}
 		type="button" onClick={this.handleClick.bind(this)} 
 		className={"square " + (this.stateOfSquare ? "complete" : "")} >
-		{this.props.phrase + " " + this.props.position.x + " " + this.props.position.y}
+		{this.props.phrase}
 		<div className={"separator-horizontal " + squarePairClass(this.horizontalPairState) }></div><div className={"separator-vertical " + squarePairClass(this.verticalPairState)}></div>
 	  </button>
 	);
