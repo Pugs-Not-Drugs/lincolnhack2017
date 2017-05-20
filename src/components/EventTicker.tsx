@@ -19,6 +19,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
     handleStateChange() {
         var state = gameStateStore.getState();
         this.text = GameStateEventResolver(state.game, state.lastSquareActioned);
+        clearInterval(this.timerId);
         this.timerId = setInterval(() => this.tick(), 2000);
         this.setState({
             newForm : true
