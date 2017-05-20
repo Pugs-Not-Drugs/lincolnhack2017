@@ -40,19 +40,19 @@ export class WinningBuddies extends React.Component<EventProps,{}> {
                 newForm : true
             });
         }
+        this.display = true
+            this.setState({
+                newForm : true
+            });
     }
 
   render() {
         return (
             <div id="winningBuddies">
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[0] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[1] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[2] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[4] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[5] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[6] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[7] : ""}/>
-                <img className={"winningBuddies " + (!this.display ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])} src={this.display ? this.images[8] : ""}/>
+                <img className={"winningBuddies " + (!this.display ? "" : this.animations[0])} src={this.display ? this.images[0] : ""}/>
+                <img className={"winningBuddies " + (!this.display ? "" : this.animations[1])} src={this.display ? this.images[1] : ""}/>
+                <img className={"winningBuddies " + (!this.display ? "" : this.animations[2])} src={this.display ? this.images[2] : ""}/>
+                <img className={"winningBuddies " + (!this.display ? "" : this.animations[3])} src={this.display ? "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/db.png" : ""}/>
             </div>
         );
   }
