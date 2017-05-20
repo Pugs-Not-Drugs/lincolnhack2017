@@ -211,3 +211,130 @@
     25%   {left:0%; top:110%; opacity: 1;}
     100% {left:0%; top:-30%; opacity: 1;}
 }
+
+.winningBuddies {
+	display:none;
+}
+
+.winningBuddies.animateFive {
+	position: absolute;
+	display: block;
+	height: 400px;
+	width: 400px;
+	left: 30%;
+	top: 30%;
+	z-index=1000;
+    -webkit-animation: buddyAnimationFive 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationFive 5s linear 2s infinite alternate;
+}
+@-webkit-keyframes buddyAnimationFive {
+    0%   {left:900px; top:900px;}
+    25%  {left:900; top:500px;}
+    50%  {left:500; top:500px;}
+    75%  {left:600px; top:300px;}
+    100% {left:900px; top:600px;}
+}
+
+/* Standard syntax */
+@keyframes buddyAnimationFive {
+    0%   {left:900px; top:900px;}
+    25%  {left:900; top:500px;}
+    50%  {left:500; top:500px;}
+    75%  {left:600px; top:300px;}
+    100% {left:900px; top:600px;}
+}
+
+.winningBuddies.animateSix {
+	position: absolute;
+	display: block;
+	height: 400px;
+	width: 400px;
+	left: 30%;
+	top: 30%;
+	z-index=1000;
+    -webkit-animation: buddyAnimationSix 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationSix 5s linear 2s infinite alternate;
+}
+@-webkit-keyframes buddyAnimationSix {
+    0%   {left:400px; top:0px;}
+    25%  {left:400; top:200px;}
+    50%  {left:600; top:200px;}
+    75%  {left:600px; top:400px;}
+    100% {left:400px; top:200px;}
+}
+
+/* Standard syntax */
+@keyframes buddyAnimationSix {
+    0%   {left:400px; top:0px;}
+    25%  {left:400; top:200px;}
+    50%  {left:600; top:200px;}
+    75%  {left:600px; top:400px;}
+    100% {left:400px; top:200px;}
+}
+
+.winningBuddies.animateSeven {
+	position: absolute;
+	display: block;
+	height: 400px;
+	width: 400px;
+	left: 30%;
+	top: 30%;
+	margin: auto;
+	z-index=1000;
+    -webkit-animation: buddyAnimationSeven 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationSeven 5s linear 2s infinite alternate;
+}
+@-webkit-keyframes buddyAnimationSeven {
+    0%   {left:800px; top:0px;}
+    25%  {left:600px; top:0px;}
+    50%  {left:500; top:100px;}
+    75%  {left:600px; top:300px;}
+    100% {left:650px; top:150px;}
+}
+
+/* Standard syntax */
+@keyframes buddyAnimationSeven {
+    0%   {left:800px; top:0px;}
+    25%  {left:600px; top:0px;}
+    50%  {left:500; top:100px;}
+    75%  {left:600px; top:300px;}
+    100% {left:650px; top:150px;}
+}
+
+#winningBuddies {
+	height:100%;
+	width: 100%;
+	position: absolute;
+	top:0px;
+	left:0px;
+	background: none !important;
+	pointer-events: none;
+}
+
+.winningBuddies.animateEight {
+	position: absolute;
+	display: block;
+	height: 400px;
+	width: 400px;
+	left: 30%;
+	top: 30%;
+	z-index=1000;
+    -webkit-animation: buddyAnimationEight 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationEight 5s linear 2s infinite alternate;
+}
+@-webkit-keyframes buddyAnimationEight {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes buddyAnimationEight {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+}
