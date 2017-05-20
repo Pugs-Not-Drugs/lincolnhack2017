@@ -94,11 +94,14 @@
 
 #drinkingBuddy {
 	display:none;
+	
+	z-index: 1000;
 }
 
 #drinkingBuddy img {
 	height: 400px;
 	width: 400px;
+	z-index: 1000;
 }
 
 .background-image {
