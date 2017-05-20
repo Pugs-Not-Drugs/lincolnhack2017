@@ -1,5 +1,6 @@
 import * as React from "react";
 import { gameStateStore } from "../stores";
+import { GameStateEventResolver } from "../GameStateEventResolver"
 
 export interface EventProps { }
 
@@ -16,8 +17,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
     }
 
     handleStateChange() {
-        //gameStateStore.getState().game;
-        this.text = "Drink!"
+        this.text = GameStateEventResolver(gameStateStore);
         this.timerId = setInterval(
             () => this.tick(),
             2000
@@ -40,7 +40,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
 
     render() {
         return (
-            <div className="eventTicker">{this.text}</div>
+            <div id="eventTicker">{this.text}</div>
         );
   }
 }
