@@ -2,8 +2,9 @@ import * as Redux from "redux";
 import { selectSquare, unselectSquare, SquareClickedAction, SQUARE_SELECTED, SQUARE_UNSELECTED } from '../actions'
 import { Stores } from '../stores'
 import { GetSquareName } from "../SquareStateHelper"
+var request = require('sync-request');
 
-const initialState: Stores.GameState = {
+const initialGameState: Stores.GameState = {
       lastSquareActioned: null,
       game: {
         "0-0": 0,
@@ -34,7 +35,15 @@ const initialState: Stores.GameState = {
       }
 }
 
-export function GameStateReducer (state: Stores.GameState = initialState, action: SquareClickedAction): Stores.GameState {
+// console.log(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body);
+
+const initialPhrases: Stores.Phrases = {
+  phrases: eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body)
+}
+
+console.log(initialPhrases);
+
+export function GameStateReducer (state: Stores.GameState = initialGameState, action: SquareClickedAction): Stores.GameState {
   var currentState: Stores.GameState = state
   switch (action.type) {
     case SQUARE_SELECTED:
@@ -49,6 +58,6 @@ export function GameStateReducer (state: Stores.GameState = initialState, action
   return currentState
 }
 
-function getState() {
-
+export function PhrasesReducer (state: Stores.Phrases = initialPhrases): Stores.Phrases {
+  return state;
 }
