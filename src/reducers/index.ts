@@ -3,42 +3,49 @@ import { selectSquare, unselectSquare, SquareClickedAction, SQUARE_SELECTED, SQU
 import { Stores } from '../stores'
 
 const initialState: Stores.GameState = {
-      A1: 0,
-      A2: 0,
-      A3: 0,
-      A4: 0,
-      A5: 0,
-      B1: 0,
-      B2: 0,
-      B3: 0,
-      B4: 0,
-      B5: 0,
-      C1: 0,
-      C2: 0,
-      C3: 0,
-      C4: 0,
-      C5: 0,
-      D1: 0,
-      D2: 0,
-      D3: 0,
-      D4: 0,
-      D5: 0,
-      E1: 0,
-      E2: 0,
-      E3: 0,
-      E4: 0,
-      E5: 0,
+      game: {
+        "0-0": 0,
+        "0-1": 0,
+        "0-2": 0,
+        "0-3": 0,
+        "0-4": 0,
+        "1-0": 0,
+        "1-1": 0,
+        "1-2": 0,
+        "1-3": 0,
+        "1-4": 0,
+        "2-0": 0,
+        "2-1": 0,
+        "2-2": 0,
+        "2-3": 0,
+        "2-4": 0,
+        "3-0": 0,
+        "3-1": 0,
+        "3-2": 0,
+        "3-3": 0,
+        "3-4": 0,
+        "4-0": 0,
+        "4-1": 0,
+        "4-2": 0,
+        "4-3": 0,
+        "4-4": 0,
+      }
 }
 
 export function GameStateReducer (state: Stores.GameState = initialState, action: SquareClickedAction): Stores.GameState {
   var currentState: Stores.GameState = state
   switch (action.type) {
     case SQUARE_SELECTED:
-        currentState.A1 = 1;
+    action.postion.x
+        currentState.game["0-0"] = 1;
         return currentState
     case SQUARE_UNSELECTED:
-        currentState.A1 = 0;
+        currentState.game["0-0"] = 0;
         return currentState
   }
   return currentState
+}
+
+function getState() {
+
 }

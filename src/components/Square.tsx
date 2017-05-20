@@ -28,8 +28,7 @@ export class Square extends React.Component<SquareProps,{}> {
     }
 
     handleStateChange() {
-        let x = store.getState();
-        if(x.A1 === 1) {
+        if(store.getState().game["0-0"] === 1) {
             this.stateOfSquare = true;
         } else { 
             this.stateOfSquare = false;
