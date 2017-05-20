@@ -39,8 +39,12 @@ export class Square extends React.Component<SquareProps,{}> {
 
   render() {
     return (
-      <button type="button" onClick={this.handleClick.bind(this)} className={"square " + this.stateOfSquare ? "complete" : ""} >
+      <button 
+        id={this.props.position.x + "-" + this.props.position.y}
+        type="button" onClick={this.handleClick.bind(this)} 
+        className={"square " + (this.stateOfSquare ? "complete" : "")} >
         {this.props.phrase}
+        <div className="separator-horizontal"></div><div className="separator-vertical"></div>
       </button>
     );
   }
