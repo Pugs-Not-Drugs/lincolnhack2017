@@ -9,6 +9,7 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
     winUrl: string
     timerId: NodeJS.Timer;
     images: string[]
+    animations: string[]
 
     constructor() {
         super();
@@ -23,6 +24,12 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
             "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/5.png",
             "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/6.png",
             "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/7.png",
+        ]
+        this.animations = [
+            "animateOne",
+            "animateTwo",
+            "animateThree",
+            "animateFour",
         ]
     }
 
@@ -57,7 +64,7 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
 
   render() {
         return (
-            <div id="drinkingBuddy" className={(this.imageUrl == "" ? "" : " animate")}><img src={this.imageUrl}/></div>
+            <div id="drinkingBuddy" className={(this.imageUrl == "" ? "" : this.animations[Math.floor(Math.random() * this.animations.length)])}><img src={this.imageUrl}/></div>
         );
   }
 }
