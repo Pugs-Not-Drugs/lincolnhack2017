@@ -1,4 +1,6 @@
 import { GridPosition } from "../models/GridPosition";
+import { createStore, Store } from "redux";
+import { GameStateReducer } from "../reducers";
 
 export namespace Stores {
 
@@ -11,3 +13,4 @@ export namespace Stores {
   }
 }
 
+export const gameStateStore: Store<Stores.GameState> = createStore(GameStateReducer)
