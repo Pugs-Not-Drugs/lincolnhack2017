@@ -21,10 +21,10 @@ export class Square extends React.Component<SquareProps,{}> {
         this.horizontalPair = false;
         this.verticalPair = false;
         gameStateStore.subscribe(this.handleStateChange.bind(this));
-        gameStateStore.subscribe(this.handleConnectorUpdate.bind(this));
+        gameStateStore.subscribe(this.handlePairUpdate.bind(this));
             this.state = {
-      newForm : null
-    };
+        newForm : null
+      };
     }
 
     handleStateChange() {
@@ -47,14 +47,14 @@ export class Square extends React.Component<SquareProps,{}> {
       }
   }
 
-  handleConnectorUpdate() {
+  handlePairUpdate() {
     let x = gameStateStore.getState();
 
-    let horizontalPairPosition: GridPosition = new GridPosition(this.props.position.x + 1, this.props.position.y)
-    let verticalPairPosition: GridPosition = new GridPosition(this.props.position.x, this.props.position.y + 1)
-
-    this.horizontalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)])
-    this.verticalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)])
+    let horizontalPairPosition: GridPosition = new GridPosition(this.props.position.x, this.props.position.y + 1)
+    let verticalPairPosition: GridPosition = new GridPosition(this.props.position.x - 1, this.props.position.y)
+    
+    this.horizontalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)] === 1)
+    this.verticalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)] === 1)
         
     this.setState({
       newForm : true
@@ -67,7 +67,7 @@ export class Square extends React.Component<SquareProps,{}> {
         id={"square-" + this.props.position.x + "-" + this.props.position.y}
         type="button" onClick={this.handleClick.bind(this)} 
         className={"square " + (this.stateOfSquare ? "complete" : "")} >
-        {this.props.phrase}
+        {this.props.phrase + " " + this.props.position.x + " " + this.props.position.y}
         <div className={"separator-horizontal" + (this.horizontalPair ? " complete" : "")}></div><div className={"separator-vertical" + (this.verticalPair ? " complete" : "")}></div>
       </button>
     );
