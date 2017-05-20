@@ -22,6 +22,7 @@ export class Square extends React.Component<SquareProps,{}> {
         this.horizontalPair = false;
         this.verticalPair = false;
         store.subscribe(this.handleStateChange.bind(this));
+        store.subscribe(this.handleConnectorUpdate.bind(this));
             this.state = {
       newForm : null
     };
@@ -46,6 +47,10 @@ export class Square extends React.Component<SquareProps,{}> {
       } else {
         store.dispatch(unselectSquare(this.props.position))
       }
+  }
+
+  handleConnectorUpdate() {
+    let x = store.getState();
   }
   
   render() {
