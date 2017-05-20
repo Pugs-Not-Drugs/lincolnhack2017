@@ -1,11 +1,14 @@
 import { GridPosition } from "./models/GridPosition";
 
 export function GameStateEventResolver(gameState: any, lastActionedPosition: GridPosition): string {
+    if(rowComplete(gameState, 0) && rowComplete(gameState, 1) && rowComplete(gameState, 2) && rowComplete(gameState, 3) && rowComplete(gameState, 4)) {
+        return "Parliamentary majority!"
+    }
     if(rowComplete(gameState, lastActionedPosition.x)) {
-        return "Row smashed!!! Drink 3 fingers!";
+        return "Seats gained! Drink 3 fingers!";
     }
     if(columnComplete(gameState, lastActionedPosition.y)) {
-        return "Column smashed!!! Drink 3 fingers!";
+        return "Seats gained! Drink 3 fingers!";
     }
     return "Drink one finger!";
 }
