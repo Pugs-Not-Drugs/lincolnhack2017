@@ -35,8 +35,8 @@ export class Square extends React.Component<SquareProps,{}> {
         }
 
         this.setState({
-              newForm : true
-            });
+          newForm : true
+        });
     }
 
    handleClick() {
@@ -49,6 +49,16 @@ export class Square extends React.Component<SquareProps,{}> {
 
   handleConnectorUpdate() {
     let x = gameStateStore.getState();
+
+    let horizontalPairPosition: GridPosition = new GridPosition(this.props.position.x + 1, this.props.position.y)
+    let verticalPairPosition: GridPosition = new GridPosition(this.props.position.x, this.props.position.y + 1)
+
+    this.horizontalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)])
+    this.verticalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)])
+        
+    this.setState({
+      newForm : true
+    });
   }
   
   render() {
