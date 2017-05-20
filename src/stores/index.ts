@@ -6,6 +6,7 @@ export namespace Stores {
 
   export type GameState = { 
       game: any
+      lastSquareActioned: GridPosition
     }
       
   export type All = {

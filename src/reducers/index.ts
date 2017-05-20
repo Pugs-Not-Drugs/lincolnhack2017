@@ -4,6 +4,7 @@ import { Stores } from '../stores'
 import { GetSquareName } from "../SquareStateHelper"
 
 const initialState: Stores.GameState = {
+      lastSquareActioned: null,
       game: {
         "0-0": 0,
         "0-1": 0,
@@ -38,9 +39,11 @@ export function GameStateReducer (state: Stores.GameState = initialState, action
   switch (action.type) {
     case SQUARE_SELECTED:
         currentState.game[GetSquareName(action.postion)] = 1;
+        currentState.lastSquareActioned = action.postion;
         return currentState
     case SQUARE_UNSELECTED:
         currentState.game[GetSquareName(action.postion)] = 0;
+        currentState.lastSquareActioned = action.postion;
         return currentState
   }
   return currentState

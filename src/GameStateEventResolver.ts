@@ -1,7 +1,13 @@
+import { GridPosition } from "./models/GridPosition";
 
-export function GameStateEventResolver(gameState: any): string {
-    var rowZeroComplete = rowComplete(gameState, 0);
-    return rowZeroComplete ? "Row zero smashed!!! Drink 3 fingers!" : "Drink one finger!";
+export function GameStateEventResolver(gameState: any, lastActionedPosition: GridPosition): string {
+    if(rowComplete(gameState, lastActionedPosition.x)) {
+        return "Row smashed!!! Drink 3 fingers!";
+    }
+    if(columnComplete(gameState, lastActionedPosition.y)) {
+        return "Column smashed!!! Drink 3 fingers!";
+    }
+    return "Drink one finger!";
 }
 
 export function rowComplete(gameState: any, rowNumber: number): boolean {
