@@ -4,6 +4,7 @@ import { GridPosition } from "../models/GridPosition";
 import { Stores } from "../stores";
 import { GameStateReducer } from "../reducers";
 import { selectSquare, unselectSquare } from "../actions"
+import { GetSquareName } from "../SquareStateHelper"
 
 const store: Store<Stores.GameState> = createStore(GameStateReducer)
 
@@ -29,8 +30,7 @@ export class Square extends React.Component<SquareProps,{}> {
     }
 
     handleStateChange() {
-        let x = store.getState();
-        if(x.A1 === 1) {
+        if(store.getState().game[GetSquareName(this.props.position)] === 1) {
             this.stateOfSquare = true;
         } else { 
             this.stateOfSquare = false;
