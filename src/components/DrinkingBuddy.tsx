@@ -36,7 +36,6 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
     handleStateChange() {
         var state = gameStateStore.getState();
         if(rowComplete(state.game, 0) && rowComplete(state.game, 1) && rowComplete(state.game, 2) && rowComplete(state.game, 3) && rowComplete(state.game, 4)) {
-            console.log("You win!");
             this.imageUrl = this.winUrl;
             clearInterval(this.timerId);
             this.timerId = setInterval(() => this.tick(), 4000);
@@ -44,7 +43,6 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
                 newForm : true
             });
         } else if(rowComplete(state.game, state.lastSquareActioned.x) || columnComplete(state.game, state.lastSquareActioned.y)) { 
-            console.log("Row or Column Complete!");
             this.imageUrl = this.images[Math.floor(Math.random() * this.images.length)];
             clearInterval(this.timerId);
             this.timerId = setInterval(() => this.tick(), 4000);
