@@ -1,7 +1,21 @@
 
 export function GameStateEventResolver(gameState: any): string {
-    var rowZeroComplete = rowComplete(gameState, 0);
-    return rowZeroComplete ? "Row zero smashed!!! Drink 3 fingers!" : "Drink one finger!";
+    if(rowComplete(gameState, 0)) {
+        return "First row smashed!!! Drink 3 fingers!";
+    }
+    if(rowComplete(gameState, 1)) {
+        return "Second row smashed!!! Drink 3 fingers!";
+    }
+    if(rowComplete(gameState, 2)) {
+        return "Third row smashed!!! Drink 3 fingers!";
+    }
+    if(rowComplete(gameState, 3)) {
+        return "Fourth row smashed!!! Drink 3 fingers!";
+    }
+    if(rowComplete(gameState, 4)) {
+        return "Fifth row smashed!!! Drink 3 fingers!";
+    }
+    return "Drink one finger!";
 }
 
 export function rowComplete(gameState: any, rowNumber: number): boolean {
