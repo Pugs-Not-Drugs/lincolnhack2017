@@ -40,10 +40,6 @@ export class WinningBuddies extends React.Component<EventProps,{}> {
                 newForm : true
             });
         }
-        this.display = true
-            this.setState({
-                newForm : true
-            });
     }
 
   render() {
