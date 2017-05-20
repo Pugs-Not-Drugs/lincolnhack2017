@@ -10,3 +10,31 @@ body{
 .waves-effect{
      background-color: #8e9ca5;
 }
+
+.conservative {
+    background-color: #0087dc;
+}
+
+.labour {
+    background-color: #d50000;
+}
+
+.libdems {
+    background-color: #FDBB30;
+}
+
+.snp {
+    background-color: #FFF95D;
+}
+
+.plaidcymru {
+    background-color: #3F8428;
+}
+
+.ukip {
+    background-color: #B3009D;
+}
+
+.greens {
+    background-color: #008066;
+}
