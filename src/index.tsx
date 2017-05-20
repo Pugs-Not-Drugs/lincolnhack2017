@@ -1,12 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
+import { Grid } from "./components/Grid";
 
 ReactDOM.render(
     <div>
-        <Hello framework="y" compiler="x"/>
-        <button>ummm</button>
+        <Grid/>
     </div>,
     document.getElementById("example")
 );
