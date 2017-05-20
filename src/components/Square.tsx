@@ -22,9 +22,9 @@ export class Square extends React.Component<SquareProps,{}> {
         this.verticalPair = false;
         gameStateStore.subscribe(this.handleStateChange.bind(this));
         gameStateStore.subscribe(this.handlePairUpdate.bind(this));
-            this.state = {
-        newForm : null
-      };
+        this.state = {
+          newForm : null
+        };
     }
 
     handleStateChange() {
