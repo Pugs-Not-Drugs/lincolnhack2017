@@ -10,8 +10,8 @@ export namespace Stores {
     }
   
   export type Phrase = {
-      message: string,
-      weight: number
+      Message: string,
+      Weighting: number
   }
 
   export type Phrases = { 

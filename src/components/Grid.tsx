@@ -18,7 +18,7 @@ var phraseList: SquareData[][] = [];
 for (var i = 0; i < numColumns; i++) {
 	phraseList[i] = [];
 	for (var j = 0; j < numColumns; j++) {
-		phraseList[i][j] = new SquareData(phrases[(i * 5) + j].message, new GridPosition(i, j));
+		phraseList[i][j] = new SquareData(phrases[(i * 5) + j].Message, new GridPosition(i, j));
 	}
 }
 

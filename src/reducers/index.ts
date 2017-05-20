@@ -2,6 +2,7 @@ import * as Redux from "redux";
 import { selectSquare, unselectSquare, SquareClickedAction, SQUARE_SELECTED, SQUARE_UNSELECTED } from '../actions'
 import { Stores } from '../stores'
 import { GetSquareName } from "../SquareStateHelper"
+var request = require('sync-request');
 
 const initialGameState: Stores.GameState = {
       lastSquareActioned: null,
@@ -34,6 +35,14 @@ const initialGameState: Stores.GameState = {
       }
 }
 
+// console.log(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body);
+
+const initialPhrases: Stores.Phrases = {
+  phrases: eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body)
+}
+
+console.log(initialPhrases);
+
 export function GameStateReducer (state: Stores.GameState = initialGameState, action: SquareClickedAction): Stores.GameState {
   var currentState: Stores.GameState = state
   switch (action.type) {
@@ -47,36 +56,6 @@ export function GameStateReducer (state: Stores.GameState = initialGameState, ac
         return currentState
   }
   return currentState
-}
-
-const initialPhrases: Stores.Phrases = {
-  phrases: [ 
-    { message: "asdas", weight: 1},
-    { message: "123", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "dsa", weight: 1},
-    { message: "sad", weight: 1},
-    { message: "sad", weight: 1},
-    { message: "asd", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1},
-    { message: "ads", weight: 1}
-  ]
 }
 
 export function PhrasesReducer (state: Stores.Phrases = initialPhrases): Stores.Phrases {
