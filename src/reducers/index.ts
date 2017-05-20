@@ -46,10 +46,8 @@ function RandomisePhases(): any {
   for(var i = 0; i < 25; i++) {
     var random = Math.floor(Math.random() * response.length);
     var element = response.splice(random, 1)
-    console.log(element[0])
     phrases.push(element[0]);
   }
-  console.log(phrases)
   return phrases;
 }
 
