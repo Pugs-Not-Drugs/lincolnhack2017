@@ -35,13 +35,9 @@ const initialGameState: Stores.GameState = {
       }
 }
 
-// console.log(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body);
-
 const initialPhrases: Stores.Phrases = {
   phrases: eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body)
 }
-
-console.log(initialPhrases);
 
 export function GameStateReducer (state: Stores.GameState = initialGameState, action: SquareClickedAction): Stores.GameState {
   var currentState: Stores.GameState = state

@@ -8,7 +8,7 @@ export namespace Stores {
       game: any
       lastSquareActioned: GridPosition
     }
-  
+
   export type Phrase = {
       Message: string,
       Weighting: number
@@ -17,8 +17,7 @@ export namespace Stores {
   export type Phrases = { 
       phrases: Phrase[]
     }
-      
-      
+
   export type All = {
     game: GameState
     phrases: Phrases
