@@ -37,7 +37,20 @@ const initialGameState: Stores.GameState = {
 }
 
 const initialPhrases: Stores.Phrases = {
-  phrases: eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body)
+  phrases: RandomisePhases()
+}
+
+function RandomisePhases(): any {
+  var response = eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body);
+  var phrases: Stores.Phrase[] = [];
+  for(var i = 0; i < 25; i++) {
+    var random = Math.floor(Math.random() * response.length);
+    var element = response.splice(random, 1)
+    console.log(element[0])
+    phrases.push(element[0]);
+  }
+  console.log(phrases)
+  return phrases;
 }
 
 export function GameStateReducer (state: Stores.GameState = initialGameState, action: SquareClickedAction): Stores.GameState {
