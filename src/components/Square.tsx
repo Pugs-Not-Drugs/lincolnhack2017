@@ -40,7 +40,7 @@ export class Square extends React.Component<SquareProps,{}> {
   render() {
     return (
       <button 
-        id={this.props.position.x + "-" + this.props.position.y}
+        id={"square-" + this.props.position.x + "-" + this.props.position.y}
         type="button" onClick={this.handleClick.bind(this)} 
         className={"square " + (this.stateOfSquare ? "complete" : "")} >
         {this.props.phrase}

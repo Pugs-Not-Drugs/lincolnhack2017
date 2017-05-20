@@ -9,39 +9,39 @@
     <body>
         <div class="grid">
         	<div>
-        		<button class="square">Strong and Stable<div class="separator-horizontal"></div></button>
-	        	<button class="square">I like hats<div class="separator-horizontal"></div></button>
-	        	<button class="square">Reference to Paddy Ashdown eating his hat<div class="separator-horizontal"></div></button>
-	        	<button class="square">A4<div class="separator-horizontal"></div></button>
-	        	<button class="square">A5</button>
+        		<button class="square" id="1-1">Strong and Stable<div class="separator-horizontal"></div></button>
+	        	<button class="square" id="1-2">I like hats<div class="separator-horizontal"></div></button>
+	        	<button class="square" id="1-3">Reference to Paddy Ashdown eating his hat<div class="separator-horizontal"></div></button>
+	        	<button class="square" id="1-4">A4<div class="separator-horizontal"></div></button>
+	        	<button class="square" id="1-5">A5</button>
         	</div>
         	<div>
-        		<button class="square">B1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">B2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">B3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">B4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">B5<div class="separator-vertical"></div></button>
+        		<button class="square" id="2-1">B1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="2-2">B2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="2-3">B3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="2-4">B4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="2-5">B5<div class="separator-vertical"></div></button>
         	</div>
         	<div>
-        		<button class="square">C1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">C2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">C3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">C4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">C5<div class="separator-vertical"></div></button>
+        		<button class="square" id="3-1">C1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="3-2">C2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="3-3">C3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="3-4">C4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="3-5">C5<div class="separator-vertical"></div></button>
         	</div>
         	<div>
-        		<button class="square">D1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">D2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">D3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">D4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">D5<div class="separator-vertical"></div></button>
+        		<button class="square" id="4-1">D1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="4-2">D2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="4-3">D3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="4-4">D4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="4-5">D5<div class="separator-vertical"></div></button>
         	</div>
         	<div>
-        		<button class="square">E1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">E2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">E3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">E4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
-	        	<button class="square">E5<div class="separator-vertical"></div></button>
+        		<button class="square" id="5-1">E1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="5-2">E2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="5-3">E3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="5-4">E4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square" id="5-5">E5<div class="separator-vertical"></div></button>
         	</div>
         </div>
         <script src="./node_modules/react/dist/react.js"></script>
@@ -54,11 +54,51 @@
             var clickFunc = function() {
                 var attribute = this.getAttribute("data-myattribute");
                 this.className += " complete";
+                updateGrid();
             };
 
             for (var i = 0; i < classname.length; i++) {
                 classname[i].addEventListener('click', clickFunc, false);
             }
+            
+            updateGrid();
+
+            function updateGrid() {
+            	var squares = document.getElementsByClassName("square");
+            
+	            for (var i = 0; i < classname.length; i++) {
+	            	var square = squares[i];
+	            	var id = square.id;
+
+	            	var gridPosition = id.split('-');
+
+	            	var horizontalX = parseInt(gridPosition[0]) + 1;
+	            	var verticalY = parseInt(gridPosition[1]) + 1;
+
+	            	var horizontalNeighbour = document.getElementById(horizontalX + "-" + gridPosition[1]);
+	            	var verticalNeighbour = document.getElementById(gridPosition[0] + "-" + verticalY);
+
+	            	// console.log(horizontalNeighbour);
+	            	// console.log(verticalNeighbour);
+	            	if(horizontalNeighbour != null) {
+		            	console.log(id + " has class? " + hasClass(square, "complete") + " and " + hasClass(horizontalNeighbour, "complete"));
+		            }
+	            	if(horizontalNeighbour != null && hasClass(square, "complete") && hasClass(horizontalNeighbour, "complete")) {
+	            		for(child in square.getElementsByClassName('separator-horizontal')) {
+							child.className = "separator-horizontal complete";
+						}
+	            	}
+	            	if(verticalNeighbour != null && hasClass(square, "complete") && hasClass(verticalNeighbour, "complete")) {
+	            		for(child in square.getElementsByClassName('separator-vertical')) {
+							child.className = "separator-vertical complete";
+						}
+	            	}
+
+	            }
+            }
+            function hasClass(element, cls) {
+			    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+			}
         </script>
     </body>
 </html>

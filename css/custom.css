@@ -56,3 +56,12 @@
 	background-color: #55ee55;
 }
 
+#square-0-0 .separator-vertical, #square-0-1 .separator-vertical, #square-0-2 .separator-vertical, #square-0-3 .separator-vertical, #square-0-4 .separator-vertical {
+	display:none;
+}
+#square-0-4 .separator-horizontal, #square-1-4 .separator-horizontal, #square-2-4 .separator-horizontal, #square-3-4 .separator-horizontal, #square-4-4 .separator-horizontal {
+	display:none;
+}
+
+
+
