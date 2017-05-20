@@ -12,11 +12,15 @@ export interface SquareProps { phrase: string; position: GridPosition}
 export class Square extends React.Component<SquareProps,{}> {
     props: SquareProps;
     stateOfSquare: boolean;
+    horizontalPair: boolean;
+    verticalPair: boolean;
 
     constructor(props: SquareProps) {
         super();
         this.props = props;
         this.stateOfSquare = false;
+        this.horizontalPair = false;
+        this.verticalPair = false;
         store.subscribe(this.handleStateChange.bind(this));
             this.state = {
       newForm : null
@@ -43,7 +47,7 @@ export class Square extends React.Component<SquareProps,{}> {
         store.dispatch(unselectSquare(this.props.position))
       }
   }
-
+  
   render() {
     return (
       <button 
@@ -51,7 +55,7 @@ export class Square extends React.Component<SquareProps,{}> {
         type="button" onClick={this.handleClick.bind(this)} 
         className={"square " + (this.stateOfSquare ? "complete" : "")} >
         {this.props.phrase}
-        <div className="separator-horizontal"></div><div className="separator-vertical"></div>
+        <div className={"separator-horizontal" + (this.horizontalPair ? " complete" : "")}></div><div className={"separator-vertical" + (this.verticalPair ? " complete" : "")}></div>
       </button>
     );
   }
