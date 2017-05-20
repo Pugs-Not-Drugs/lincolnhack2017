@@ -40,7 +40,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
 
     render() {
         return (
-            <div>{this.text}</div>
+            <div className="eventTicker">{this.text}</div>
         );
   }
 }
