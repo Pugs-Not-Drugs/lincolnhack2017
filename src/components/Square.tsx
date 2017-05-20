@@ -5,6 +5,7 @@ import { gameStateStore } from "../stores";
 import { selectSquare, unselectSquare, squarePairClass } from "../actions"
 import { GetSquareName } from "../SquareStateHelper"
 import { SQUARE_NO_LINK, SQUARE_PARTIAL_LINK, SQUARE_FULL_LINK,  } from '../actions'
+import { rowComplete, columnComplete } from "../GameStateEventResolver"
 
 
 export interface SquareProps { phrase: string; position: GridPosition}
@@ -54,16 +55,17 @@ export class Square extends React.Component<SquareProps,{}> {
     let horizontalPairPosition: GridPosition = new GridPosition(this.props.position.x, this.props.position.y + 1)
     let verticalPairPosition: GridPosition = new GridPosition(this.props.position.x - 1, this.props.position.y)
 
-    /*if(rowComplete(this.props.position.x)) {
+    if(rowComplete(x.game, this.props.position.x)) {
       this.horizontalPairState = SQUARE_FULL_LINK;
-    } else */if(this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)] === 1) {
+    } else if(this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)] === 1) {
       this.horizontalPairState = SQUARE_PARTIAL_LINK;
     } else {
       this.horizontalPairState = SQUARE_NO_LINK;
     }
     
-    /*if(columnComplete(this.props.position.x)) {
-    } else */if(this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)] === 1) {
+    if(columnComplete(x.game, this.props.position.y)) {
+      this.verticalPairState = SQUARE_FULL_LINK
+    } else if(this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)] === 1) {
       this.verticalPairState = SQUARE_PARTIAL_LINK
     } else {
       this.verticalPairState = SQUARE_NO_LINK;
@@ -81,7 +83,7 @@ export class Square extends React.Component<SquareProps,{}> {
         type="button" onClick={this.handleClick.bind(this)} 
         className={"square " + (this.stateOfSquare ? "complete" : "")} >
         {this.props.phrase + " " + this.props.position.x + " " + this.props.position.y}
-        <div className={"separator-horizontal " + squarePairClass(this.horizontalPairState) }></div><div className={"separator-vertical" + squarePairClass(this.verticalPairState)}></div>
+        <div className={"separator-horizontal " + squarePairClass(this.horizontalPairState) }></div><div className={"separator-vertical " + squarePairClass(this.verticalPairState)}></div>
       </button>
     );
   }

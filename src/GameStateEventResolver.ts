@@ -7,6 +7,16 @@ export function GameStateEventResolver(gameState: any): string {
 export function rowComplete(gameState: any, rowNumber: number): boolean {
     var counter = 0;
     for(var i = 0; i < 5; i++) {
+        if(gameState[rowNumber + "-" + i]) {
+            counter++;
+        }
+    }
+    return counter === 5;
+}
+
+export function columnComplete(gameState: any, rowNumber: number): boolean {
+    var counter = 0;
+    for(var i = 0; i < 5; i++) {
         if(gameState[i + "-" + rowNumber]) {
             counter++;
         }
