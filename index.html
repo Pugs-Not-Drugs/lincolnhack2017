@@ -1,28 +1,51 @@
 <html>
     <head>
-        <meta charset="UTF-8"/>
-        <title>Basic Typescript React Client</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/skeleton.css">
-        <link rel="stylesheet" href="css/custom.css">
+        <title>General Election 2017 Bingo!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        <link rel="stylesheet" href="css/site.css">
     </head>
     <body>
-        <div id="example"></div>
-        <script src="./node_modules/react/dist/react.js"></script>
-        <script src="./node_modules/react-dom/dist/react-dom.js"></script>
-        <script src="./dist/bundle.js"></script>
-        
-        <script type="text/javascript">
-            var classname = document.getElementsByClassName("square");
-            
-            var clickFunc = function() {
-                var attribute = this.getAttribute("data-myattribute");
-                this.className += " complete";
-            };
+        <div class="container center-align">
+            <h2>Welcome to General Election Bingo 2017</h2>
+            <p class="flow-text">General election bingo is the game you need to get through the night! Starting at 
+                10pm on June 8th 2017 after the polls close, and the TV coverage begins, as you find out the results, you will either be 
+                drinking in celebration or commiseration </p>
 
-            for (var i = 0; i < classname.length; i++) {
-                classname[i].addEventListener('click', clickFunc, false);
-            }
-        </script>
+            <h5>The rules!</h5>
+            <ol type="1">
+                <li>You can play alone, or with friends</li>
+                <li>If the phrase on the tile is mentioned on screen, tick it off your board</li>
+                <li>When a square is filled, drink 1 shot / finger</li>
+                <li>If a line is filled (horizontal, vertical or diagonal) drink 3 shots / finger</li>
+                <li>If you get bingo, open a fresh drink, finish it</li>
+            </ol>
+            <div class="center-align">
+                <input type="text" placeholder="Nickname"/>
+                <button class=" center-align waves-effect waves-light btn"><span>Start the game!</span></button>
+            </div>
+        </div>
+        <br/>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                <div class="col l6 s12">
+                    <h5>Disclaimer</h5>
+                    <p class="flow-text">This site promotes the drinking of alcohol.
+If you are a resident of the UK, you should be 18 years of age or older to view this site.
+Otherwise, you should be of legal drinking age OR over the legal age permitted to
+purchase alcohol in the country where you live or from where you access this site.
+PLEASE DRINK RESPONSIBLY
+<a href="www.drinkaware.co.uk"> Drink Aware </a> </p>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                © 2017 Pugs not drugs
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     </body>
 </html>

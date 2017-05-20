@@ -35,12 +35,10 @@ export function GameStateReducer (state: Stores.GameState = initialState, action
   switch (action.type) {
     case SQUARE_SELECTED:
         currentState.A1 = 1;
-         console.log("turned on")
         return currentState
     case SQUARE_UNSELECTED:
         currentState.A1 = 0;
-        console.log("turned off")
         return currentState
   }
-  return state
+  return currentState
 }
