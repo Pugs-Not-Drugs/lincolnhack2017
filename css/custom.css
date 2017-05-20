@@ -121,8 +121,8 @@
 	opacity: 0;
 	top: 50%;
 	left: 90%;
-	-webkit-animation: buddyAnimationOne 2s ; /* Safari 4.0 - 8.0 */
-    animation: buddyAnimationOne 2s linear;
+	-webkit-animation: buddyAnimationOne 4s ; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationOne 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationOne {
@@ -146,8 +146,8 @@
 	opacity: 0;
 	top: -10%;
 	left: -10%;
-	-webkit-animation: buddyAnimationTwo 3s ; /* Safari 4.0 - 8.0 */
-    animation: buddyAnimationTwo 3s linear;
+	-webkit-animation: buddyAnimationTwo 4s ; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationTwo 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationTwo {
@@ -171,8 +171,8 @@
 	opacity: 0;
 	top: -30%;
 	left: 70%;
-	-webkit-animation: buddyAnimationThree 2s ; /* Safari 4.0 - 8.0 */
-    animation: buddyAnimationThree 2s linear;
+	-webkit-animation: buddyAnimationThree 4s ; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationThree 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationThree {
@@ -198,8 +198,8 @@
 	opacity: 0;
 	top: 50%;
 	left: 90%;
-	-webkit-animation: buddyAnimationFour 2s ; /* Safari 4.0 - 8.0 */
-    animation: buddyAnimationFour 2s linear;
+	-webkit-animation: buddyAnimationFour 4s ; /* Safari 4.0 - 8.0 */
+    animation: buddyAnimationFour 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationFour {
