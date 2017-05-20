@@ -18,10 +18,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
 
     handleStateChange() {
         this.text = GameStateEventResolver(gameStateStore);
-        this.timerId = setInterval(
-            () => this.tick(),
-            2000
-            );
+        this.timerId = setInterval(() => this.tick(), 2000);
         this.setState({
             newForm : true
         });
@@ -34,11 +31,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
     });
   }
 
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
-
-    render() {
+  render() {
         return (
             <div id="eventTicker">{this.text}</div>
         );
