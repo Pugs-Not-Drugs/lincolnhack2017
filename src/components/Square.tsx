@@ -18,6 +18,9 @@ export class Square extends React.Component<SquareProps,{}> {
         this.props = props;
         this.stateOfSquare = false;
         store.subscribe(this.handleStateChange.bind(this));
+            this.state = {
+      newForm : null
+    };
     }
 
     handleStateChange() {
@@ -27,6 +30,10 @@ export class Square extends React.Component<SquareProps,{}> {
         } else { 
             this.stateOfSquare = false;
         }
+
+        this.setState({
+              newForm : true
+            });
     }
 
    handleClick() {
