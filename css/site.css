@@ -13,28 +13,70 @@ body{
 
 .conservative {
     background-color: #0087dc;
+    font-family: 'Chewy', cursive;
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
 
 .labour {
     background-color: #d50000;
+    font-family: 'Chewy', cursive;
+        color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
 
 .libdems {
     background-color: #FDBB30;
+    font-family: 'Chewy', cursive;
+        color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
 
 .snp {
     background-color: #FFF95D;
+    font-family: 'Chewy', cursive;
+        color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
 
 .plaidcymru {
     background-color: #3F8428;
+    font-family: 'Chewy', cursive;
+        color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
 
 .ukip {
     background-color: #B3009D;
+    font-family: 'Chewy', cursive;
+        color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
 
 .greens {
     background-color: #008066;
+    font-family: 'Chewy', cursive;
+        color: white;
+    text-align: center;
+    font-size: 5em;
+    width:100%;
+    z-index: 1000;
 }
