@@ -70,3 +70,11 @@
 #square-0-4 .separator-horizontal, #square-1-4 .separator-horizontal, #square-2-4 .separator-horizontal, #square-3-4 .separator-horizontal, #square-4-4 .separator-horizontal {
 	display:none;
 }
+
+#eventTicker {
+	position: absolute;
+	top: 0;
+	font-size: 30px;
+	color: red;
+	background-color: yellow;
+}
