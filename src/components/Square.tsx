@@ -2,8 +2,9 @@ import * as React from "react";
 import { createStore, Store } from "redux";
 import { GridPosition } from "../models/GridPosition";
 import { gameStateStore } from "../stores";
-import { selectSquare, unselectSquare } from "../actions"
+import { selectSquare, unselectSquare, squarePairClass } from "../actions"
 import { GetSquareName } from "../SquareStateHelper"
+import { SQUARE_NO_LINK, SQUARE_PARTIAL_LINK, SQUARE_FULL_LINK,  } from '../actions'
 
 
 export interface SquareProps { phrase: string; position: GridPosition}
@@ -11,15 +12,15 @@ export interface SquareProps { phrase: string; position: GridPosition}
 export class Square extends React.Component<SquareProps,{}> {
     props: SquareProps;
     stateOfSquare: boolean;
-    horizontalPair: boolean;
-    verticalPair: boolean;
+    horizontalPairState: string;
+    verticalPairState: string;
 
     constructor(props: SquareProps) {
         super();
         this.props = props;
         this.stateOfSquare = false;
-        this.horizontalPair = false;
-        this.verticalPair = false;
+        this.horizontalPairState = SQUARE_NO_LINK;
+        this.verticalPairState = SQUARE_NO_LINK;
         gameStateStore.subscribe(this.handleStateChange.bind(this));
         gameStateStore.subscribe(this.handlePairUpdate.bind(this));
             this.state = {
@@ -52,10 +53,22 @@ export class Square extends React.Component<SquareProps,{}> {
 
     let horizontalPairPosition: GridPosition = new GridPosition(this.props.position.x, this.props.position.y + 1)
     let verticalPairPosition: GridPosition = new GridPosition(this.props.position.x - 1, this.props.position.y)
+
+    /*if(rowComplete(this.props.position.x)) {
+      this.horizontalPairState = SQUARE_FULL_LINK;
+    } else */if(this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)] === 1) {
+      this.horizontalPairState = SQUARE_PARTIAL_LINK;
+    } else {
+      this.horizontalPairState = SQUARE_NO_LINK;
+    }
     
-    this.horizontalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(horizontalPairPosition)] === 1)
-    this.verticalPair = (this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)] === 1)
-        
+    /*if(columnComplete(this.props.position.x)) {
+    } else */if(this.stateOfSquare && gameStateStore.getState().game[GetSquareName(verticalPairPosition)] === 1) {
+      this.verticalPairState = SQUARE_PARTIAL_LINK
+    } else {
+      this.verticalPairState = SQUARE_NO_LINK;
+    }
+
     this.setState({
       newForm : true
     });
@@ -68,7 +81,7 @@ export class Square extends React.Component<SquareProps,{}> {
         type="button" onClick={this.handleClick.bind(this)} 
         className={"square " + (this.stateOfSquare ? "complete" : "")} >
         {this.props.phrase + " " + this.props.position.x + " " + this.props.position.y}
-        <div className={"separator-horizontal" + (this.horizontalPair ? " complete" : "")}></div><div className={"separator-vertical" + (this.verticalPair ? " complete" : "")}></div>
+        <div className={"separator-horizontal " + squarePairClass(this.horizontalPairState) }></div><div className={"separator-vertical" + squarePairClass(this.verticalPairState)}></div>
       </button>
     );
   }
