@@ -10,41 +10,40 @@ const store: Store<Stores.GameState> = createStore(GameStateReducer)
 export interface SquareProps { phrase: string; position: GridPosition}
 
 export class Square extends React.Component<SquareProps,{}> {
-    props: SquareProps;    
-    state: string;
+    props: SquareProps;
+    stateOfSquare: boolean;
 
     constructor(props: SquareProps) {
         super();
         this.props = props;
-        store.subscribe(this.handleStateChange)
+        this.stateOfSquare = false;
+        store.subscribe(this.handleStateChange.bind(this));
+        console.log("constructor say WHAAAAT!?")
     }
+
+    handleStateChange() {
+        let x = store.getState();
+        if(x.A1 === 1) {
+            this.stateOfSquare = true;
+        } else { 
+            this.stateOfSquare = false;
+        }
+    }
+
+   handleClick() {
+      if(this.stateOfSquare === false) {
+        store.dispatch(selectSquare(this.props.position))
+      } else {
+        store.dispatch(unselectSquare(this.props.position))
+      }
+  }
 
   render() {
     return (
       <button type="button" onClick={this.handleClick.bind(this)} className="square">
         {this.props.phrase}
-        <div className={this.state}></div>
+        <div className={this.stateOfSquare? "on" : "off"}></div>
       </button>
     );
-  }
-
-  private handleClick() {
-      if(this.state === "off" || this.state === null) {
-        store.dispatch(selectSquare(this.props.position))
-        console.log("turning on");
-      } else {
-          console.log("turning off");
-        store.dispatch(unselectSquare(this.props.position))
-      }
-  }
-
-  private handleStateChange() {
-    if(store.getState().A1 === 1) {
-        this.state = "on";
-    } else { 
-        this.state = "off";
-    }
-    
-    console.log(this.state);
   }
 }

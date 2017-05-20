@@ -32,15 +32,14 @@ const initialState: Stores.GameState = {
 
 export function GameStateReducer (state: Stores.GameState = initialState, action: SquareClickedAction): Stores.GameState {
   var currentState: Stores.GameState = state
+  console.log(action);
   switch (action.type) {
     case SQUARE_SELECTED:
         currentState.A1 = 1;
-         console.log("turned on")
         return currentState
     case SQUARE_UNSELECTED:
         currentState.A1 = 0;
-        console.log("turned off")
         return currentState
   }
-  return state
+  return currentState
 }
