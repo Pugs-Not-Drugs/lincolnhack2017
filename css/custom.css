@@ -8,6 +8,7 @@
 }
 
 .square {
+	position: relative;
 	width: 15%;
 	height: 15%;
 	margin: 2%;
@@ -19,6 +20,7 @@
 	float: left;
 	border: 1px gray solid;
 	vertical-align: middle;
+	background-color: white;
 }
 
 .square.complete {
@@ -26,4 +28,31 @@
 	color: white;
 }
 
+.separator-horizontal {
+	position: absolute;
+	height: 5px;
+	width: 30%;
+	top: 49%;
+	background-color: #aaa;
+	left: 100%;
+	z-index: -1;
+}
+
+.separator-vertical {
+	position: absolute;
+	height: 40%;
+	width: 5px;
+	background-color: #aaa;
+	top: -40%;
+	left: 50%;
+	z-index: -1;
+}
+
+.separator-vertical.complete {
+	background-color: #55ee55;
+}
+
+.separator-horizontal.complete {
+	background-color: #55ee55;
+}
 

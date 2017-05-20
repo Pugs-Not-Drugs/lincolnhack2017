@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Basic Typescript React Client</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+    <body>
+        <div class="grid">
+        	<div>
+        		<button class="square">Strong and Stable<div class="separator-horizontal"></div></button>
+	        	<button class="square">I like hats<div class="separator-horizontal"></div></button>
+	        	<button class="square">Reference to Paddy Ashdown eating his hat<div class="separator-horizontal"></div></button>
+	        	<button class="square">A4<div class="separator-horizontal"></div></button>
+	        	<button class="square">A5</button>
+        	</div>
+        	<div>
+        		<button class="square">B1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">B2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">B3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">B4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">B5<div class="separator-vertical"></div></button>
+        	</div>
+        	<div>
+        		<button class="square">C1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">C2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">C3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">C4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">C5<div class="separator-vertical"></div></button>
+        	</div>
+        	<div>
+        		<button class="square">D1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">D2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">D3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">D4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">D5<div class="separator-vertical"></div></button>
+        	</div>
+        	<div>
+        		<button class="square">E1<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">E2<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">E3<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">E4<div class="separator-horizontal"></div><div class="separator-vertical"></div></button>
+	        	<button class="square">E5<div class="separator-vertical"></div></button>
+        	</div>
+        </div>
+        <script src="./node_modules/react/dist/react.js"></script>
+        <script src="./node_modules/react-dom/dist/react-dom.js"></script>
+        <script src="./dist/bundle.js"></script>
+        
+        <script type="text/javascript">
+            var classname = document.getElementsByClassName("square");
+            
+            var clickFunc = function() {
+                var attribute = this.getAttribute("data-myattribute");
+                this.className += " complete";
+            };
+
+            for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', clickFunc, false);
+            }
+        </script>
+    </body>
+</html>
