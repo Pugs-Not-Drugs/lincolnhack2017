@@ -89,6 +89,7 @@
     left:0px;
     right:0px;
     margin-bottom:0px;
+	font-family: 'Jura', cursive;
 }
 
 #eventTicker:empty {
@@ -98,6 +99,7 @@
 #drinkingBuddy {
 	display:none;
 	z-index: 1000;
+	
 }
 
 #drinkingBuddy img {
@@ -213,7 +215,7 @@
 	display: block;
 	left: 30%;
 	top: 30%;
-	z-index=1000;
+	z-index: 1000;
     -webkit-animation: buddyAnimationFive 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationFive 5s linear 2s infinite alternate;
 }
@@ -240,7 +242,7 @@
 	display: block;
 	left: 30%;
 	top: 30%;
-	z-index=1000;
+	z-index:000;
     -webkit-animation: buddyAnimationSix 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationSix 5s linear 2s infinite alternate;
 }
@@ -267,7 +269,7 @@
 	left: 30%;
 	top: 30%;
 	margin: auto;
-	z-index=1000;
+	z-index:1000;
     -webkit-animation: buddyAnimationSeven 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationSeven 5s linear 2s infinite alternate;
 }
@@ -303,7 +305,7 @@
 	display: block;
 	left: 30%;
 	top: 30%;
-	z-index=1000;
+	z-index:1000;
     -webkit-animation: buddyAnimationEight 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationEight 5s linear 2s infinite alternate;
 }
