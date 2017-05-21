@@ -8,6 +8,9 @@ export function GameStateEventResolver(gameState: any, lastActionedPosition: Gri
         && rowComplete(gameState, 4)) {
         return "Parliamentary majority!";
     }
+    if (rowComplete(gameState, lastActionedPosition.x) && columnComplete(gameState, lastActionedPosition.y)) {
+        return "Constituency Combo! Drink 5g fingers!";
+    }
     if (rowComplete(gameState, lastActionedPosition.x)) {
         return "Seats gained! Drink 3 fingers!";
     }
