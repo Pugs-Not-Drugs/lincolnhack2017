@@ -73,8 +73,6 @@
 }
 
 #eventTicker {
-    /*background-color:rgba(0, 0, 0, 0.85);
-    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9;  ie fallback png background image */
     z-index:1;
     color:white;
     text-align: center;
@@ -99,7 +97,6 @@
 #drinkingBuddy {
 	display:none;
 	z-index: 1000;
-	
 }
 
 #drinkingBuddy img {
@@ -120,21 +117,19 @@
 	display: block;
 	opacity: 0;
 	top: 50%;
-	left: 90%;
+	left: 150%;
 	-webkit-animation: buddyAnimationOne 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationOne 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationOne {
-    0%   {left:90%; top:45%; opacity: 0;}
-    25%   {left:90%; top:45%; opacity: 1;}
+    0%   {left:150%; top:45%; opacity: 1;}
     100% {left:-50%; top:45%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationOne {
-    0%   {left:90%; top:45%; opacity: 0;}
-    25%   {left:90%; top:45%; opacity: 1;}
+    0%   {left:150%; top:45%; opacity: 1;}
     100% {left:-50%; top:45%; opacity: 1;}
 }
 
@@ -143,45 +138,41 @@
 	display: block;
 	opacity: 0;
 	top: 20%;
-	left: -10%;
+	left: -60%;
 	-webkit-animation: buddyAnimationTwo 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationTwo 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationTwo {
-    0%   {left:-30%; top:20%; opacity: 0;}
-    25%   {left:-30%; top:20%; opacity: 1;}
-    100% {left:130%; top:20%; opacity: 1;}
+    0%   {left:-60%; top:20%; opacity: 1;}
+    100% {left:160%; top:20%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationTwo {
-    0%   {left:-30%; top:20%; opacity: 0;}
-    25%   {left:-30%; top:20%; opacity: 1;}
-    100% {left:130%; top:20%; opacity: 1;}
+    0%   {left:-60%; top:20%; opacity: 1;}
+    100% {left:160%; top:20%; opacity: 1;}
 }
 
 #drinkingBuddy.animateThree {
 	position: absolute;
 	display: block;
 	opacity: 0;
-	top: -30%;
+	top: -100%;
 	left: 70%;
 	-webkit-animation: buddyAnimationThree 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationThree 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationThree {
-    0%   {left:70%; top:-60%; opacity: 0;}
-    25%   {left:70%; top:-60%; opacity: 1;}
-    100% {left:70%; top:110%; opacity: 1;}
+    0%   {left:70%; top:-100%; opacity: 1;}
+    100% {left:70%; top:150%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationThree {
-    0%   {left:70%; top:-60%; opacity: 0;}
-    25%   {left:70%; top:-60%; opacity: 1;}
-    100% {left:70%; top:110%; opacity: 1;}
+    0%   {left:70%; top:-100%; opacity: 1;}
+    100% {left:70%; top:150%; opacity: 1;}
 }
 
 #drinkingBuddy.animateFour {
@@ -189,22 +180,20 @@
 	display: block;
 	opacity: 0;
 	top: 50%;
-	left: 90%;
+	left: 160%;
 	-webkit-animation: buddyAnimationFour 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationFour 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationFour {
-    0%   {left:0%; top:110%; opacity: 0;}
-    25%   {left:0%; top:110%; opacity: 1;}
-    100% {left:0%; top:-30%; opacity: 1;}
+    0%   {left:0%; top:160%; opacity: 1;}
+    100% {left:0%; top:-100%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationFour {
-    0%   {left:0%; top:110%; opacity: 0;}
-    25%   {left:0%; top:110%; opacity: 1;}
-    100% {left:0%; top:-30%; opacity: 1;}
+    0%   {left:0%; top:160%; opacity: 1;}
+    100% {left:0%; top:-100%; opacity: 1;}
 }
 .winningBuddies {
 	display:none;
