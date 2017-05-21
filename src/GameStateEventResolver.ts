@@ -9,7 +9,7 @@ export function GameStateEventResolver(gameState: any, lastActionedPosition: Gri
         return "Parliamentary majority!";
     }
     if (rowComplete(gameState, lastActionedPosition.x) && columnComplete(gameState, lastActionedPosition.y)) {
-        return "Constituency Combo! Drink 5g fingers!";
+        return "Constituency Combo! Drink 5 fingers!";
     }
     if (rowComplete(gameState, lastActionedPosition.x)) {
         return "Seats gained! Drink 3 fingers!";
@@ -30,10 +30,10 @@ export function rowComplete(gameState: any, rowNumber: number): boolean {
     return counter === 5;
 }
 
-export function columnComplete(gameState: any, rowNumber: number): boolean {
+export function columnComplete(gameState: any, columnNumber: number): boolean {
     let counter = 0;
     for (let i = 0; i < 5; i++) {
-        if (gameState[i + "-" + rowNumber]) {
+        if (gameState[i + "-" + columnNumber]) {
             counter++;
         }
     }
