@@ -257,6 +257,7 @@
 	display: block;
 	left: 30%;
 	top: 30%;
+	max-height: 400px;
 	margin: auto;
 	z-index:1000;
     -webkit-animation: buddyAnimationSeven 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
