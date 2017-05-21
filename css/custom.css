@@ -1,10 +1,11 @@
 .grid {
-	width: 75%;
-	height: 75%;
+	width: 50%;
+	height: 50%;
 	margin: auto;
 	text-align: center;
-	min-width: 750px;
-	min-height: 750px;
+	min-width: 700px;
+	min-height: 600px;
+	padding-top: 0px;
 }
 
 .square {
@@ -72,35 +73,33 @@
 }
 
 #eventTicker {
-	position:absolute;
-    top:35%;
-    left:35%;
-    right:35%;
-    bottom:35%;
-    background-color:rgba(0, 0, 0, 0.85);
-    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
-    z-index:9999;
+    z-index:1;
     color:white;
     text-align: center;
 	font-size: 40px;
-	padding: 5%;
+	padding: 1%;
 	white-space: normal;
 	line-height: 40px;
 	float: left;
+	position:fixed;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+	font-family: 'Jura', cursive;
 }
+
 #eventTicker:empty {
    display: none;
 }
 
 #drinkingBuddy {
 	display:none;
-
 	z-index: 1000;
 }
 
 #drinkingBuddy img {
-	height: 400px;
-	width: 400px;
 	z-index: 1000;
 }
 
@@ -116,103 +115,85 @@
 #drinkingBuddy.animateOne {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
 	top: 50%;
-	left: 90%;
+	left: 150%;
 	-webkit-animation: buddyAnimationOne 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationOne 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationOne {
-    0%   {left:90%; top:45%; opacity: 0;}
-    25%   {left:90%; top:45%; opacity: 1;}
+    0%   {left:150%; top:45%; opacity: 1;}
     100% {left:-50%; top:45%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationOne {
-    0%   {left:90%; top:45%; opacity: 0;}
-    25%   {left:90%; top:45%; opacity: 1;}
+    0%   {left:150%; top:45%; opacity: 1;}
     100% {left:-50%; top:45%; opacity: 1;}
 }
 
 #drinkingBuddy.animateTwo {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
-	top: -10%;
-	left: -10%;
+	top: 20%;
+	left: -60%;
 	-webkit-animation: buddyAnimationTwo 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationTwo 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationTwo {
-    0%   {left:-30%; top:-10%; opacity: 0;}
-    25%   {left:-30%; top:-10%; opacity: 1;}
-    100% {left:130%; top:-10%; opacity: 1;}
+    0%   {left:-60%; top:20%; opacity: 1;}
+    100% {left:160%; top:20%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationTwo {
-    0%   {left:-30%; top:-10%; opacity: 0;}
-    25%   {left:-30%; top:-10%; opacity: 1;}
-    100% {left:130%; top:-10%; opacity: 1;}
+    0%   {left:-60%; top:20%; opacity: 1;}
+    100% {left:160%; top:20%; opacity: 1;}
 }
 
 #drinkingBuddy.animateThree {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
-	top: -30%;
+	top: -100%;
 	left: 70%;
 	-webkit-animation: buddyAnimationThree 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationThree 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationThree {
-    0%   {left:70%; top:-60%; opacity: 0;}
-    25%   {left:70%; top:-60%; opacity: 1;}
-    100% {left:70%; top:110%; opacity: 1;}
+    0%   {left:70%; top:-100%; opacity: 1;}
+    100% {left:70%; top:150%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationThree {
-    0%   {left:70%; top:-60%; opacity: 0;}
-    25%   {left:70%; top:-60%; opacity: 1;}
-    100% {left:70%; top:110%; opacity: 1;}
+    0%   {left:70%; top:-100%; opacity: 1;}
+    100% {left:70%; top:150%; opacity: 1;}
 }
-
-
 
 #drinkingBuddy.animateFour {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
 	top: 50%;
-	left: 90%;
+	left: 160%;
 	-webkit-animation: buddyAnimationFour 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationFour 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationFour {
-    0%   {left:0%; top:110%; opacity: 0;}
-    25%   {left:0%; top:110%; opacity: 1;}
-    100% {left:0%; top:-30%; opacity: 1;}
+    0%   {left:0%; top:160%; opacity: 1;}
+    100% {left:0%; top:-100%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationFour {
-    0%   {left:0%; top:110%; opacity: 0;}
-    25%   {left:0%; top:110%; opacity: 1;}
-    100% {left:0%; top:-30%; opacity: 1;}
+    0%   {left:0%; top:160%; opacity: 1;}
+    100% {left:0%; top:-100%; opacity: 1;}
 }
 .winningBuddies {
 	display:none;
@@ -221,14 +202,13 @@
 .winningBuddies.animateFive {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
-	z-index=1000;
+	z-index: 1000;
     -webkit-animation: buddyAnimationFive 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationFive 5s linear 2s infinite alternate;
 }
+
 @-webkit-keyframes buddyAnimationFive {
     0%   {left:900px; top:900px;}
     25%  {left:900; top:500px;}
@@ -249,11 +229,9 @@
 .winningBuddies.animateSix {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
-	z-index=1000;
+	z-index:000;
     -webkit-animation: buddyAnimationSix 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationSix 5s linear 2s infinite alternate;
 }
@@ -277,12 +255,10 @@
 .winningBuddies.animateSeven {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
 	margin: auto;
-	z-index=1000;
+	z-index:1000;
     -webkit-animation: buddyAnimationSeven 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationSeven 5s linear 2s infinite alternate;
 }
@@ -316,11 +292,9 @@
 .winningBuddies.animateEight {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
-	z-index=1000;
+	z-index:1000;
     -webkit-animation: buddyAnimationEight 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationEight 5s linear 2s infinite alternate;
 }

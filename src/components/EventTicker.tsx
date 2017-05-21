@@ -21,7 +21,7 @@ export class EventTicker extends React.Component<EventProps,{}> {
         if(state.newlySelected) {
             this.text = GameStateEventResolver(state.game, state.lastSquareActioned);
             clearInterval(this.timerId);
-            this.timerId = setInterval(() => this.tick(), 2000);
+            this.timerId = setInterval(() => this.tick(), 4000);
             this.setState({
                 newForm : true
             });

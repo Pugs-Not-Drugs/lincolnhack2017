@@ -7,12 +7,12 @@ export interface EventProps { }
 
 export class DrinkingBuddy extends React.Component<EventProps,{}> {
     imageUrl: string;
-    winUrl: string
+    winUrl: string;
     timerId: NodeJS.Timer;
-    images: BuddyWithPhrase[]
-    animations: string[]
-    bannerClass: string
-    bannerText: string
+    images: BuddyWithPhrase[];
+    animations: string[];
+    bannerClass: string;
+    bannerText: string;
 
     constructor() {
         super();
@@ -20,13 +20,13 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
         this.imageUrl = "";
         this.winUrl = "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/db.png";
         this.images = [
-            new BuddyWithPhrase("Strong and Stable", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/1.png", "conservative"),
-            new BuddyWithPhrase("For the many, not the few", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/2.png", "labour"),
-            new BuddyWithPhrase("#IAgreeWithTim", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/3.png", "libdems"),
-            new BuddyWithPhrase("Freedom", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/4.png", "snp"),
-            new BuddyWithPhrase("Green Guarantee", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/5.png", "greens"),
-            new BuddyWithPhrase("Tarian Cymru", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/6.png", "plaidcymru"),
-            new BuddyWithPhrase("Zero Net Immigration", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/7.png", "ukip"),
+            new BuddyWithPhrase("Strong and Stable", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/1.png", "conservative"),
+            new BuddyWithPhrase("For the many, not the few", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/2.png", "labour"),
+            new BuddyWithPhrase("#IAgreeWithTim", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/3.png", "libdems"),
+            new BuddyWithPhrase("Freedom", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/4.png", "snp"),
+            new BuddyWithPhrase("Green Guarantee", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/5.png", "greens"),
+            new BuddyWithPhrase("Tarian Cymru", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/6.png", "plaidcymru"),
+            new BuddyWithPhrase("Zero Net Immigration", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/7.png", "ukip"),
         ]
         this.animations = [
             "animateOne",
@@ -37,19 +37,12 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
     }
 
     handleStateChange() {
-        var state = gameStateStore.getState();
-        /*if(rowComplete(state.game, 0) && rowComplete(state.game, 1) && rowComplete(state.game, 2) && rowComplete(state.game, 3) && rowComplete(state.game, 4)) {
-            this.imageUrl = this.winUrl;
-            clearInterval(this.timerId);
-            this.timerId = setInterval(() => this.tick(), 4000);
-            this.setState({
-                newForm : true
-            });
-        } else */if(rowComplete(state.game, state.lastSquareActioned.x) || columnComplete(state.game, state.lastSquareActioned.y)) { 
+        let state = gameStateStore.getState();
+        if(rowComplete(state.game, state.lastSquareActioned.x) || columnComplete(state.game, state.lastSquareActioned.y)) { 
             let selectedBuddy: BuddyWithPhrase = this.images[Math.floor(Math.random() * this.images.length)];
             this.imageUrl = selectedBuddy.image;
-            this.bannerClass = selectedBuddy.bannerClass
-            this.bannerText = selectedBuddy.phrase
+            this.bannerClass = selectedBuddy.bannerClass;
+            this.bannerText = selectedBuddy.phrase;
             clearInterval(this.timerId);
             this.timerId = setInterval(() => this.tick(), 4000);
             this.setState({
