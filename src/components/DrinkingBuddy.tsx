@@ -7,12 +7,12 @@ export interface EventProps { }
 
 export class DrinkingBuddy extends React.Component<EventProps,{}> {
     imageUrl: string;
-    winUrl: string
+    winUrl: string;
     timerId: NodeJS.Timer;
-    images: BuddyWithPhrase[]
-    animations: string[]
-    bannerClass: string
-    bannerText: string
+    images: BuddyWithPhrase[];
+    animations: string[];
+    bannerClass: string;
+    bannerText: string;
 
     constructor() {
         super();
