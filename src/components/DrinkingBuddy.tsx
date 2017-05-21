@@ -37,19 +37,12 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
     }
 
     handleStateChange() {
-        var state = gameStateStore.getState();
-        /*if(rowComplete(state.game, 0) && rowComplete(state.game, 1) && rowComplete(state.game, 2) && rowComplete(state.game, 3) && rowComplete(state.game, 4)) {
-            this.imageUrl = this.winUrl;
-            clearInterval(this.timerId);
-            this.timerId = setInterval(() => this.tick(), 4000);
-            this.setState({
-                newForm : true
-            });
-        } else */if(rowComplete(state.game, state.lastSquareActioned.x) || columnComplete(state.game, state.lastSquareActioned.y)) { 
+        let state = gameStateStore.getState();
+        if(rowComplete(state.game, state.lastSquareActioned.x) || columnComplete(state.game, state.lastSquareActioned.y)) { 
             let selectedBuddy: BuddyWithPhrase = this.images[Math.floor(Math.random() * this.images.length)];
             this.imageUrl = selectedBuddy.image;
-            this.bannerClass = selectedBuddy.bannerClass
-            this.bannerText = selectedBuddy.phrase
+            this.bannerClass = selectedBuddy.bannerClass;
+            this.bannerText = selectedBuddy.phrase;
             clearInterval(this.timerId);
             this.timerId = setInterval(() => this.tick(), 4000);
             this.setState({
