@@ -12,6 +12,10 @@ body{
      background-color: #8e9ca5;
 }
 
+.buttonWithBackground {
+    background: #b68440;
+}
+
 .banner {
     display:block !important;
     position:absolute;

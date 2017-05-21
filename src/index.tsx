@@ -6,6 +6,7 @@ import { Grid } from "./components/Grid";
 import { EventTicker } from "./components/EventTicker";
 import { DrinkingBuddy } from "./components/DrinkingBuddy";
 import { WinningBuddies } from "./components/WinningBuddies";
+import { Reset } from "./components/Reset";
 
 ReactDOM.render(
     <div>
@@ -14,6 +15,7 @@ ReactDOM.render(
         <EventTicker/>
         <DrinkingBuddy/>
         <WinningBuddies/>
+        <Reset/>
     </div>,
     document.getElementById("example")
 );
