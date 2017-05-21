@@ -116,8 +116,6 @@
 #drinkingBuddy.animateOne {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
 	top: 50%;
 	left: 90%;
@@ -141,8 +139,6 @@
 #drinkingBuddy.animateTwo {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
 	top: -10%;
 	left: -10%;
@@ -166,8 +162,6 @@
 #drinkingBuddy.animateThree {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
 	top: -30%;
 	left: 70%;
@@ -188,13 +182,9 @@
     100% {left:70%; top:110%; opacity: 1;}
 }
 
-
-
 #drinkingBuddy.animateFour {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	opacity: 0;
 	top: 50%;
 	left: 90%;
@@ -221,14 +211,13 @@
 .winningBuddies.animateFive {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
 	z-index=1000;
     -webkit-animation: buddyAnimationFive 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationFive 5s linear 2s infinite alternate;
 }
+
 @-webkit-keyframes buddyAnimationFive {
     0%   {left:900px; top:900px;}
     25%  {left:900; top:500px;}
@@ -249,8 +238,6 @@
 .winningBuddies.animateSix {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
 	z-index=1000;
@@ -277,8 +264,6 @@
 .winningBuddies.animateSeven {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
 	margin: auto;
@@ -316,8 +301,6 @@
 .winningBuddies.animateEight {
 	position: absolute;
 	display: block;
-	height: 400px;
-	width: 400px;
 	left: 30%;
 	top: 30%;
 	z-index=1000;

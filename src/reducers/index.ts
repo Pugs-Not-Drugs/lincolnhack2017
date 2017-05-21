@@ -1,12 +1,10 @@
 import * as Redux from "redux";
-import { selectSquare, unselectSquare, SquareClickedAction, SQUARE_SELECTED, SQUARE_UNSELECTED } from '../actions'
-import { Stores } from '../stores'
 import { GetSquareName } from "../SquareStateHelper"
-var request = require('sync-request');
+import { selectSquare, unselectSquare, ISquareClickedAction, SQUARE_SELECTED, SQUARE_UNSELECTED } from "../actions"
+import { Stores } from "../stores"
+let request = require("sync-request");
 
 const initialGameState: Stores.GameState = {
-      lastSquareActioned: null,
-      newlySelected: false,
       game: {
         "0-0": 0,
         "0-1": 0,
@@ -33,39 +31,42 @@ const initialGameState: Stores.GameState = {
         "4-2": 0,
         "4-3": 0,
         "4-4": 0,
-      }
+      },
+      newlySelected: false,
+      lastSquareActioned: null,
 }
 
 const initialPhrases: Stores.Phrases = {
-  phrases: RandomisePhases()
+  phrases: RandomisePhases(),
 }
 
 function RandomisePhases(): any {
-  var response = eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body);
-  var phrases: Stores.Phrase[] = [];
-  for(var i = 0; i < 25; i++) {
-    var random = Math.floor(Math.random() * response.length);
-    var element = response.splice(random, 1)
+  let response = eval(request("GET", "https://mqc1zmxqw2.execute-api.eu-west-1.amazonaws.com/Hackathon/").body);
+  let phrases: Stores.Phrase[] = [];
+  for (let i = 0; i < 25; i++) {
+    let random = Math.floor(Math.random() * response.length);
+    let element = response.splice(random, 1);
     phrases.push(element[0]);
   }
   return phrases;
 }
 
-export function GameStateReducer (state: Stores.GameState = initialGameState, action: SquareClickedAction): Stores.GameState {
-  var currentState: Stores.GameState = state
+export function GameStateReducer (state: Stores.GameState = initialGameState,
+                                  action: ISquareClickedAction): Stores.GameState {
+  let currentState: Stores.GameState = state;
   switch (action.type) {
     case SQUARE_SELECTED:
         currentState.game[GetSquareName(action.postion)] = 1;
         currentState.lastSquareActioned = action.postion;
         currentState.newlySelected = action.newlySelected;
-        return currentState
+        return currentState;
     case SQUARE_UNSELECTED:
         currentState.game[GetSquareName(action.postion)] = 0;
         currentState.lastSquareActioned = action.postion;
         currentState.newlySelected = action.newlySelected;
-        return currentState
+        return currentState;
   }
-  return currentState
+  return currentState;
 }
 
 export function PhrasesReducer (state: Stores.Phrases = initialPhrases): Stores.Phrases {

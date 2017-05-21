@@ -20,13 +20,13 @@ export class DrinkingBuddy extends React.Component<EventProps,{}> {
         this.imageUrl = "";
         this.winUrl = "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/db.png";
         this.images = [
-            new BuddyWithPhrase("Strong and Stable", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/1.png", "conservative"),
-            new BuddyWithPhrase("For the many, not the few", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/2.png", "labour"),
-            new BuddyWithPhrase("#IAgreeWithTim", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/3.png", "libdems"),
-            new BuddyWithPhrase("Freedom", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/4.png", "snp"),
-            new BuddyWithPhrase("Green Guarantee", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/5.png", "greens"),
-            new BuddyWithPhrase("Tarian Cymru", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/6.png", "plaidcymru"),
-            new BuddyWithPhrase("Zero Net Immigration", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/7.png", "ukip"),
+            new BuddyWithPhrase("Strong and Stable", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/1.png", "conservative"),
+            new BuddyWithPhrase("For the many, not the few", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/2.png", "labour"),
+            new BuddyWithPhrase("#IAgreeWithTim", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/3.png", "libdems"),
+            new BuddyWithPhrase("Freedom", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/4.png", "snp"),
+            new BuddyWithPhrase("Green Guarantee", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/5.png", "greens"),
+            new BuddyWithPhrase("Tarian Cymru", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/6.png", "plaidcymru"),
+            new BuddyWithPhrase("Zero Net Immigration", "https://s3-eu-west-1.amazonaws.com/gebingo.co.uk/Politicians/new/7.png", "ukip"),
         ]
         this.animations = [
             "animateOne",
