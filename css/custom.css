@@ -209,13 +209,13 @@
 }
 .winningBuddies {
 	display:none;
+	
 }
 
 .winningBuddies.animateFive {
 	position: absolute;
 	display: block;
-	left: 30%;
-	top: 30%;
+	left: -150%;
 	z-index: 1000;
     -webkit-animation: buddyAnimationFive 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationFive 5s linear 2s infinite alternate;
@@ -241,8 +241,7 @@
 .winningBuddies.animateSix {
 	position: absolute;
 	display: block;
-	left: 30%;
-	top: 30%;
+	left: -150%;
 	z-index:000;
     -webkit-animation: buddyAnimationSix 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationSix 5s linear 2s infinite alternate;
@@ -267,8 +266,7 @@
 .winningBuddies.animateSeven {
 	position: absolute;
 	display: block;
-	left: 30%;
-	top: 30%;
+	left: -150%;
 	max-height: 400px;
 	margin: auto;
 	z-index:1000;
@@ -305,8 +303,7 @@
 .winningBuddies.animateEight {
 	position: absolute;
 	display: block;
-	left: 30%;
-	top: 30%;
+	left: -150%;
 	z-index:1000;
     -webkit-animation: buddyAnimationEight 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationEight 5s linear 2s infinite alternate;
