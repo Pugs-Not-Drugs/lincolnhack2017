@@ -1,10 +1,11 @@
 .grid {
-	width: 75%;
-	height: 75%;
+	width: 50%;
+	height: 50%;
 	margin: auto;
 	text-align: center;
-	min-width: 750px;
-	min-height: 750px;
+	min-width: 700px;
+	min-height: 600px;
+	padding-top: 0px;
 }
 
 .square {
@@ -72,21 +73,22 @@
 }
 
 #eventTicker {
-	position:absolute;
-    top:35%;
-    left:35%;
-    right:35%;
-    bottom:35%;
-    background-color:rgba(0, 0, 0, 0.85);
-    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
-    z-index:9999;
+    /*background-color:rgba(0, 0, 0, 0.85);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9;  ie fallback png background image */
+    z-index:1;
     color:white;
     text-align: center;
 	font-size: 40px;
-	padding: 5%;
+	padding: 1%;
 	white-space: normal;
 	line-height: 40px;
 	float: left;
+	position:fixed;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
 }
 
 #eventTicker:empty {
