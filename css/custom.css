@@ -88,13 +88,13 @@
 	line-height: 40px;
 	float: left;
 }
+
 #eventTicker:empty {
    display: none;
 }
 
 #drinkingBuddy {
 	display:none;
-
 	z-index: 1000;
 }
 
@@ -138,23 +138,23 @@
 	position: absolute;
 	display: block;
 	opacity: 0;
-	top: -10%;
+	top: 20%;
 	left: -10%;
 	-webkit-animation: buddyAnimationTwo 4s ; /* Safari 4.0 - 8.0 */
     animation: buddyAnimationTwo 4s linear;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes buddyAnimationTwo {
-    0%   {left:-30%; top:-10%; opacity: 0;}
-    25%   {left:-30%; top:-10%; opacity: 1;}
-    100% {left:130%; top:-10%; opacity: 1;}
+    0%   {left:-30%; top:20%; opacity: 0;}
+    25%   {left:-30%; top:20%; opacity: 1;}
+    100% {left:130%; top:20%; opacity: 1;}
 }
 
 /* Standard syntax */
 @keyframes buddyAnimationTwo {
-    0%   {left:-30%; top:-10%; opacity: 0;}
-    25%   {left:-30%; top:-10%; opacity: 1;}
-    100% {left:130%; top:-10%; opacity: 1;}
+    0%   {left:-30%; top:20%; opacity: 0;}
+    25%   {left:-30%; top:20%; opacity: 1;}
+    100% {left:130%; top:20%; opacity: 1;}
 }
 
 #drinkingBuddy.animateThree {
